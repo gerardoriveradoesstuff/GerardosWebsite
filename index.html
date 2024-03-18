@@ -304,6 +304,26 @@ document.addEventListener("visibilitychange", function() {
               <img style="border-radius: 25px;" width="100%" height="100%" src="clubcaribe.webp" />
           </div>
 
+          <div id="inner-div5" style="margin-bottom: 5px;" class="favdiv224">
+                <h2>
+                  Wells Fargo Software Engineering 
+                  <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                  <i class="fa-solid fa-arrow-up"></i>
+                </h2>
+                <br>
+                <h3  style="text-align: justify;">
+                  <p>
+                    Understood relevant requirements for building a system to manage financial portfolios
+                    Figured out what data the system needed to keep track of
+                    Drafted a visual representation of the data as an entity relationship diagram (ERD)
+                    Used the IntelliJ developer application to implement the ERD and published it to GitHub
+                  </p>
+                </h3>
+                <img style="border-radius: 25px;" width="100%" height="100%" src="images/certif.jpeg" />
+
+
+          </div> 
+          
           <div id="inner-divv" style="margin-bottom: 5px;" class="favdiv224">
               <h2>
                 Intern at Business Society Club
@@ -324,7 +344,7 @@ document.addEventListener("visibilitychange", function() {
           <div id="inner-div" style="margin-bottom: 5px;" class="favdiv224">
               
               <h2>
-                Founder/CEO of UC Merced Repair
+                Founder of UC Merced Repair
                 <i class="fa fa-arrow-down" aria-hidden="true"></i>
                 <i class="fa-solid fa-arrow-up"></i>
               </h2>
@@ -339,7 +359,7 @@ document.addEventListener("visibilitychange", function() {
           
           <div id="inner-div2" style="margin-bottom: 5px;" class="favdiv224">
               <h2>
-                Founder/CEO of Impartial News
+                Founder of Impartial News
                 <i class="fa fa-arrow-down" aria-hidden="true"></i>
                 <i class="fa-solid fa-arrow-up"></i>
               </h2>
@@ -386,7 +406,7 @@ document.addEventListener("visibilitychange", function() {
         <h3>
         Feel free to contact me at...
         <br>
-        contact@gerardorivera.info
+        contact@elgerardorivera.com
         </h3>
         <center>
         <a href="mailto:contact@gerardorivera.info" class="contact-button">Contact Me</a>
@@ -403,7 +423,7 @@ document.addEventListener("visibilitychange", function() {
         <h3>
           <p>Gerardo Rivera 2023</p>
           <p>Contact:</p>
-          <p>contact@gerardorivera.info</p>
+          <p>contact@elgerardorivera.com</p>
         </h3>
       </footer>   
       
@@ -447,7 +467,10 @@ printWindowSegments();
       this.classList.toggle("show");
 			this.classList.toggle("active");
 		});
- 
+  document.getElementById("inner-div5").addEventListener("click", function() {
+    this.classList.toggle("show");
+    this.classList.toggle("active");
+  });
     function delayLoad() {
       setTimeout(function() {
         document.getElementById("myDiv").classList.add("show");

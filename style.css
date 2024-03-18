@@ -593,7 +593,8 @@ p {
 #inner-div2 h2:hover,
 #inner-div3 h2:hover,
 #inner-div4 h2:hover,
-#inner-divv h2:hover {
+#inner-divv h2:hover,
+#inner-div5 h2:hover {
   color: #ababab;
 } 
 
@@ -601,7 +602,8 @@ p {
 #inner-div2,
 #inner-div3,
 #inner-div4,
-#inner-divv {
+#inner-divv,
+#inner-div5{
   display: block;
   overflow: hidden;
   cursor: pointer;
@@ -618,7 +620,9 @@ p {
 #inner-div4 p,
 #inner-div4 img,
 #inner-divv p,
-#inner-divv img {
+#inner-divv img,
+#inner-div5 p,
+#inner-div5 img {
   opacity: 0;
   transform: translateY(-100%);
   transition: all 1s ease-in-out;
@@ -629,7 +633,8 @@ p {
 #inner-div2.active,
 #inner-div3.active,
 #inner-div4.active,
-#inner-divv.active {
+#inner-divv.active,
+#inner-div5.active {
   height: auto!important;
 }
 
@@ -642,7 +647,9 @@ p {
 #inner-div4.show p,
 #inner-div4.show img,
 #inner-divv.show p,
-#inner-divv.show img {
+#inner-divv.show img,
+#inner-div5.show img,
+#inner-div5.show p {
   transform: translateY(0%);
   opacity: 1;
 }
