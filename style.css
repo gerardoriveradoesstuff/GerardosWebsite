@@ -283,7 +283,7 @@ a {
   border-radius: 5px;
   margin-top: 25px;
   text-align: center;
-  padding: 15px;
+  
   letter-spacing: 4px;
  
 
@@ -548,14 +548,14 @@ p {
   -ms-flex: 30%; /* IE10 */
   flex: 30%;
   text-align: center;
-  padding: 20px; 
+  padding: 10px; 
 }
 
 /* Main column */
 .mainc {   
   -ms-flex: 70%; /* IE10 */
   flex: 70%;
-  padding: 20px;
+  padding: 10px;
 }
 
 .mainc p {
@@ -684,7 +684,7 @@ p {
 footer {
   text-align: center;
   margin: 0;
-  padding: 20px;
+  padding: 10px;
  
 }
 
