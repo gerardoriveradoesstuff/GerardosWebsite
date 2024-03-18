@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>My Website</title>
+		<link rel="stylesheet" href="style.css">
+		<style>
+			body {
+				background-color: black;
+				margin: 0;
+			}
+      .middle {
+        width: 50vw;
+        height: 30vh;
+        transform: translate(-150px, 100px);
+      }
+			.main {
+				height: 100vh;
+				display: flex;
+				position: relative;
+			}
+      
+			.left {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+			}
+      
+			.left img {
+				height: 150px;
+				width: 150px;
+			}
+      
+			.right {
+				position: absolute;
+				right: 0;
+ 
+			}
+      
+			.right img {
+				height: 80%;
+				width: 100%;
+			}
+			
+			.text {
+				float: left;
+				margin-left: 200px; /* adjust as necessary */
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				color: white;
+				font-size: 24px;
+				z-index: 999; /* set z-index to position above other elements */
+			}
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<div class="left">
+				<img src="https://via.placeholder.com/150x150" alt="Left Image">
+			</div>
+			<div class="right">
+				<img src="mp3.png" alt="Right Image">
+			</div>
+			<div class="text">
+        <h2>
+  				<img class="middle" src="logohead2.png" />
+        </h2>
+			</div>
+		</div>
+	</body>
+</html>

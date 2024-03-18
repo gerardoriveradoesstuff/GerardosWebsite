@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>3D Model with AR</title>
+    <script type="module">
+      import '@google/model-viewer';
+    </script>
+    <!-- If you prefer not to use ES modules, use the standard script tag -->
+    <!-- <script src="https://unpkg.com/@google/model-viewer@latest"></script> -->
+</head>
+<body>
+
+<model-viewer 
+    src="path/to/your-model.glb"
+    ios-src="path/to/your-model.usdz"
+    ar 
+    ar-modes="webxr scene-viewer quick-look"
+    environment-image="neutral"
+    auto-rotate 
+    camera-controls 
+    alt="A 3D model"
+    loading="eager">
+</model-viewer>
+
+</body>
+</html>

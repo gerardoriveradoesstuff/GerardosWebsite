@@ -1,0 +1,23 @@
+body {
+  background-color: #1c1c1c;
+}
+
+.favdiv223, .sidecard, .favdiv22, .favdiv224, .favdiv225, .github  {
+  color:white;
+}
+
+.favdiv224, .favdiv22, .favdiv223  {
+  border:1px solid white;
+}
+
+footer {
+  color: #ffffff;
+}
+
+nav a, sidec a {
+  color: white;
+}
+
+.p1, .p2, .p3, .p4, .p6 {
+  color: white;
+}

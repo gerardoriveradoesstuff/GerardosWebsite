@@ -1,0 +1,9 @@
+body {
+  background-color: black;
+  color: white; 
+}
+
+.w3-white, .w3-hover-white:hover {
+  background-color: black; 
+  color: white;
+}

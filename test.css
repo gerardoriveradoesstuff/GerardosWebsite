@@ -1,0 +1,389 @@
+body {
+  margin: 0;
+  user-select: none;
+}
+
+.whole {
+
+}
+
+@media screen and (max-width: 4000px) {
+  .whole {
+    padding-left: 25%;
+    padding-right: 25%;
+  }
+}
+
+@media screen and (max-width: 1920px) {
+  .whole {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .whole {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+@media screen and (max-width: 999px) {
+  .whole {
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+}
+
+.row {  
+  display: -ms-flexbox; 
+  display: flex;
+  -ms-flex-wrap: wrap; 
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+ 
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+
+.wh {
+  padding-left: 25%:
+  padding-right: 25%;
+}
+
+
+
+
+
+.right {
+  -ms-flex: 50%;  
+  flex: 50%;
+  padding: 5px;
+}
+
+ 
+.left {   
+  -ms-flex: 50%;  
+  flex: 50%;
+  padding: 5px;
+
+}
+
+
+
+a {
+  text-decoration: none;
+  
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.p1 {
+  background-image:url('5.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 15px;
+  border-radius: 25px;
+  height: 100%;
+}
+
+.p2 {
+  background-image: url('3 (1).webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 15px;
+  border-radius: 25px;
+  height: 100%;
+}
+.p3 {
+  background-image: url('4.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 15px;
+  border-radius: 25px;
+  height: 100%;
+}
+.p4 {
+  background-image: url('6.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 15px;
+  border-radius: 25px;
+  height: 100%;
+}
+
+.p5 {
+  border-radius: 25px;
+  height: 100%;
+}
+.p6 {
+  background-image: url('log2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 15px;
+  border-radius: 25px;
+  height: 100%;
+}
+
+.pa {
+  background-color: rgb(49, 145, 255);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 15px;
+  border-radius: 25px;
+  height: 100%;
+}
+
+.pa2 {
+  background-color: rgba(0, 255, 55, 0.705);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 15px;
+  border-radius: 25px;
+  height: 100%;
+}
+
+.favdiv22 {
+  border-radius: 25px;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom:15px;
+  height: 100%;
+  background-color: white;
+}
+
+.favdiv2 {
+  border-radius: 25px;
+  width: 100%;
+  padding: 15px;
+  color: white;
+  height: 100%;
+  background-image: url('https://th.bing.com/th/id/R.6bdd8dedb131ca856bf12bcac936c965?rik=IhF1Tn%2butj89nA&riu=http%3a%2f%2fwallup.net%2fwp-content%2fuploads%2f2016%2f03%2f10%2f331011-photography-landscape-coast-dusk-plants-sea-water.jpg&ehk=sh9H0xGXDq2kEcqloVJLZm8ZVXjKGnSF82ypCoKzw7s%3d&risl=&pid=ImgRaw&r=0');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.favdiv3 {
+  border-radius: 25px;
+  width: 100%;
+  padding: 15px;
+  color: white;
+  height: 100%;
+  background-color: rgba(0, 255, 55, 0.705);
+}
+
+
+.favdiv {
+  border-radius: 25px;
+  width: 100%;
+  padding: 15px;
+  color: white;
+  height: 100%;
+  background-color: rgb(49, 145, 255);
+}
+
+.pa iframe {
+  border-radius: 25px;
+}
+
+.pa2 img {
+  border-radius: 25px;
+}
+
+
+.tstimg {
+  padding: 5%;
+}
+@media screen and (max-width: 2000px) {
+  .tstimg {
+    width:50%
+  }
+  .hh {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 1009px) {
+  .tstimg {
+    width:100%
+  }
+  .hh {
+    width: 100%;
+  }
+}
+
+
+
+body {
+  background-color: black;
+}
+
+.hh {
+  color: white;
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ 
+
+button {
+  display: block;
+  position: relative;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+  
+  cursor: pointer;
+  outline: inherit;
+  z-index: 10;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.big {
+  font-size: 150%;
+}
+
+ 
+
+ 
+.card {
+  box-sizing: inherit;
+  font-size: 10.5px;
+  letter-spacing: 1px;
+
+  overflow: hidden;
+  font-family: adobe-handwriting-ernie;
+  background-color: #000000;
+  color: white;
+  overflow:hidden;
+  font-weight: 400;
+  font-style: normal;
+  height: 200px;
+  width: 350px;
+  
+  padding: 20px 10px 10px 10px;
+  transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg);
+  /*transform-origin: 50% 100%;*/
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, .4);
+  transition: transform .4s ease,
+              box-shadow .4s ease;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg) translateZ(10px);
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, .4);
+}
+
+.card:focus {
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(10px);
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, .4);
+}
+
+.card:focus::before {
+  transform: skewX(0deg) translateX(0px) translateY(0px);
+  height: 0px;
+}
+
+.card:focus::after {
+  transform: skewY(0deg) translateX(0px) translateY(0px);
+  width: 0px;
+}
+
+.card::before,
+.card::after {
+  content: ""; 
+  position: absolute;
+  display: block;
+  background-color: grey;
+  transition: transform .4s ease,
+              height .4s ease,
+              width .4s ease;
+}
+
+.card::before {
+  width: 100%;
+  height: 6px;
+  bottom: 0;
+  left: 0;
+  transform: skewX(45deg) translateX(-3px) translateY(6px);
+}
+
+.card::after {
+  height: 100%;
+  width: 6px;
+  top: 0;
+  right: 0;
+  transform: skewY(45deg) translateX(6px) translateY(-3px);
+}
+
+.roww {
+  text-align: center;
+  flex-direction:unset;
+}
+
+.roww:nth-child(2) {
+  margin: 35px 0 50px 0;
+}
+
+.leftt {
+  float: left;
+  font-family: adobe-handwriting-ernie;
+  z-index: 10;
+  font-size: 30px;
+ 
+}
+
+.leftt2 {
+  float: left;
+  
+  z-index: 10;
+  font-size: 20px;
+ 
+}
+
+.cc {
+  font-family: 'Stint Ultra Expanded', cursive;
+  transform: translate(-115px, -240px);
+}
+.cc2 {
+  font-family: 'Stint Ultra Expanded', cursive;
+  transform: translate(49px, -45px);
+}
+
+.rightt {
+  transform: scale(.6) translate(120px, -159px);
+  z-index: 9;
+   
+}
+
+p {
+  margin: 0;
+}

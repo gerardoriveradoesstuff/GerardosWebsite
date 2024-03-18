@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Barcode Scanner</title>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@zxing/library@0.18.3"></script>
+	<script type="text/javascript">
+		const codeReader = new ZXing.BrowserBarcodeReader();
+		const history = JSON.parse(localStorage.getItem('history')) || [];
+
+		function scanBarcode() {
+			codeReader.decodeOnceFromVideoDevice(undefined, 'video').then((result) => {
+				const isbn = result.text;
+				const url = `https://www.amazon.com/s?k=${isbn}`;
+				const img = new Image();
+				img.crossOrigin = "anonymous";
+				img.src = `http://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`;
+				img.onerror = function() {
+					img.src = 'no-image.jpg'; // If image is not available, show a default image
+				};
+				const entry = { isbn: isbn, url: url, img: img };
+				history.unshift(entry);
+				localStorage.setItem('history', JSON.stringify(history));
+				updateHistory();
+				codeReader.reset();
+				video.play();
+			}).catch((error) => {
+				console.error(error);
+				codeReader.reset();
+				video.play();
+			});
+		}
+
+    function updateHistory() {
+        const historyContainer = document.getElementById('history-container');
+        historyContainer.innerHTML = '';
+        for (let i = 0; i < history.length; i++) {
+            const entry = history[i];
+            const img = document.createElement('img');
+            img.src = entry.img.src;
+            img.alt = `ISBN ${entry.isbn}`;
+            const link = document.createElement('a');
+            link.href = entry.url;
+            link.target = '_blank';
+            link.textContent = entry.url;
+            const price = document.createElement('p');
+            fetch(`https://www.googleapis.com/books/v1/volumes?q=isbn:${entry.isbn}`)
+                .then(response => response.json())
+                .then(data => {
+                    const book = data.items[0];
+                    if (book) {
+                        price.textContent = `Price: ${book.saleInfo.listPrice.amount} ${book.saleInfo.listPrice.currencyCode}`;
+                    } else {
+                        price.textContent = 'Price: N/A';
+                    }
+                })
+                .catch(error => {
+                    console.error(error);
+                    price.textContent = 'Price: N/A';
+                });
+            const div = document.createElement('div');
+            div.appendChild(img);
+            div.appendChild(link);
+            div.appendChild(price);
+            historyContainer.appendChild(div);
+        }
+    }
+
+
+    
+
+    
+
+	</script>
+	<style>
+		#video {
+			width: 100%;
+			max-width: 640px;
+			height: auto;
+		}
+		#scan-button {
+			display: block;
+			margin: 20px auto;
+			padding: 15px;
+			font-size: 24px;
+			border-radius: 10px;
+			background-color: #1E90FF;
+			color: white;
+			border: none;
+			cursor: pointer;
+		}
+		#history-container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			margin-top: 20px;
+		}
+		#history-container div {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: 10px;
+		}
+		#history-container img {
+			max-width: 100%;
+			height: auto;
+		}
+	</style>
+</head>
+<body>
+	<h1>Scan Book Barcode to Look Up Price on Amazon</h1>
+	<video id="video"></video>
+	<button id="scan-button" onclick="scanBarcode()">Scan Barcode</button>
+	<div id="history-container"></div>
+  <h1>Book Price Lookup</h1>
+	<label for="isbn-input">Enter book ISBN:</label>
+	<input type="text" id="isbn-input" placeholder="Enter ISBN" />
+	<button id="lookup-button">Lookup Price</button>
+	<div id="price-container"></div>
+	<script type="text/javascript">
+		const video = document.getElementById('video');
+		navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } }).then((stream) => {
+			video.srcObject = stream;
+			video.setAttribute('playsinline', true);
+			video.play();
+		}).catch((error) => {
+      console.error(error);
+		});
+
+		updateHistory(); // Populate history on page load
+    
+    const lookupButton = document.getElementById('lookup-button');
+		const isbnInput = document.getElementById('isbn-input');
+		const priceContainer = document.getElementById('price-container');
+
+		lookupButton.addEventListener('click', () => {
+			const isbn = isbnInput.value;
+			fetch(`https://www.googleapis.com/books/v1/volumes?q=isbn:${isbn}`)
+				.then(response => response.json())
+				.then(data => {
+					const book = data.items[0];
+					const title = book.volumeInfo.title;
+					const author = book.volumeInfo.authors.join(', ');
+					const price = book.saleInfo.listPrice.amount;
+					const currencyCode = book.saleInfo.listPrice.currencyCode;
+					priceContainer.innerHTML = `<p>Title: ${title}</p><p>Author: ${author}</p><p>Price: ${price} ${currencyCode}</p>`;
+				})
+				.catch(error => {
+					console.error(error);
+					priceContainer.innerHTML = '<p>Unable to find book information.</p>';
+				});
+		});
+	</script>
+  
+</body>
+</html>

@@ -1,0 +1,27 @@
+body {
+  background-color: #f5f5f5;
+}
+
+.favdiv223, .sidecard, .favdiv22, .favdiv224, .favdiv225, .github  {
+  color:black;
+}
+
+.tstimg {
+  filter: invert(100%);
+} 
+
+.favdiv224, .favdiv22, .favdiv223 {
+  border:1px solid black;
+}
+
+footer {
+  color: black;
+}
+
+nav a, sidec a {
+  color: black;
+}
+
+.p1, .p2, .p3, .p4, .p6 {
+  color: white;
+}

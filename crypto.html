@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Face Detection</title>
+  </head>
+  <body>
+    <video id="video" width="640" height="480" autoplay></video>
+    <canvas id="canvas" width="640" height="480"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-core"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-converter"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/face-landmarks-detection"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/face-landmarks-detection@0.0.4/dist/face-landmarks-detection.min.js"></script>
+    <script>
+      const video = document.getElementById('video');
+      const canvas = document.getElementById('canvas');
+      const context = canvas.getContext('2d');
+
+      // Load the face-api.js models
+      Promise.all([
+        faceLandmarksDetection.load(faceLandmarksDetection.SupportedPackages.mediapipeFacemesh),
+        faceLandmarksDetection.load(faceLandmarksDetection.SupportedPackages.mediapipeBlazeface)
+      ]).then(([facemesh, blazeface]) => {
+        // Get access to the camera
+        navigator.mediaDevices.getUserMedia({ video: true })
+        .then(stream => {
+          video.srcObject = stream;
+          video.onloadedmetadata = () => {
+            video.play();
+            // Set the canvas size to match the camera feed
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+          };
+        })
+        .catch(error => {
+          console.error('Error accessing camera', error);
+        });
+
+        // Detect faces in real-time
+        setInterval(async () => {
+          // Draw the camera feed onto the canvas
+          context.drawImage(video, 0, 0, canvas.width, canvas.height);
+          
+          // Detect faces using face-api.js
+          const faces = await Promise.all([
+            facemesh.estimateFaces({input: video}),
+            blazeface.estimateFaces({input: video})
+          ]);
+          
+          // Draw bounding boxes around detected faces
+          faces.flat().forEach(face => {
+            const x = face.boundingBox.topLeft[0];
+            const y = face.boundingBox.topLeft[1];
+            const width = face.boundingBox.bottomRight[0] - x;
+            const height = face.boundingBox.bottomRight[1] - y;
+            context.strokeStyle = '#00ff00';
+            context.strokeRect(x, y, width, height);
+          });
+        }, 100);
+      });
+    </script>
+  </body>
+</html>
